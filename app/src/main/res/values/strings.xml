@@ -1,3 +1,12 @@
 <resources>
+
     <string name="app_name">EjercicioEmpleados</string>
+    <string name="btnMainNuevoEmpleado">Nuevo empleado</string>
+    <string name="btnMainListarEmpleados">Listar empleados</string>
+    <string name="btnSiguiente">Siguiente</string>
+    <string name="viewNombre">Nombre</string>
+    <string name="viewApellido">Apellido</string>
+    <string name="viewTelefono">Telefono</string>
+    <string name="viewEdad">Edad</string>
+
 </resources>

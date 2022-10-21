@@ -15,19 +15,34 @@ public class FormularioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_formulario);
     }
     public void pulsacionBtnAceptar(View v){
-        String [] cadena = new String[4];
-        EditText texto = findViewById(R.id.editTextNombre);
-        cadena[0]= texto.getText().toString();
-        texto = findViewById(R.id.editTextApellidos);
-        cadena[1]= texto.getText().toString();
-        texto = findViewById(R.id.editTextFormularioTelefono);
-        cadena[2]= texto.getText().toString();
-        texto = findViewById(R.id.editTextEdad);
-        cadena[3]= texto.getText().toString();
+        if(comprobarVacios()){
 
-        Intent i = new Intent(this,ConfirmacionDatosActivity.class);
+            EditText texto;
+            texto = findViewById(R.id.editTextNombre);
+            String tNombre = texto.getText().toString();
+            texto = findViewById(R.id.editTextApellidos);
+            String tApellido= texto.getText().toString();
+            texto = findViewById(R.id.editTextFormularioTelefono);
+            String tTelefono= texto.getText().toString();
+            texto = findViewById(R.id.editTextEdad);
+            String tEdad= texto.getText().toString();
 
-        i.putExtra("textoapasar",cadena);
-        startActivity(i);
+            Intent i = new Intent(this,ConfirmacionDatosActivity.class);
+
+            i.putExtra("nombre",tNombre);
+            i.putExtra("apellido",tApellido);
+            i.putExtra("telefono",tTelefono);
+            i.putExtra("edad",tEdad);
+            startActivity(i);
+        }
+    }
+
+    private boolean comprobarVacios(){
+        EditText texto;
+        texto = findViewById(R.id.editTextNombre);
+        if(texto.getText().toString().equals("")){
+
+        }
+        return true;
     }
 }

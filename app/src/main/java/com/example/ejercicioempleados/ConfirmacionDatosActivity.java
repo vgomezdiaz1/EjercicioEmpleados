@@ -15,17 +15,15 @@ public class ConfirmacionDatosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmacion_datos);
         Intent i = getIntent();
-        //Aqui ponemos la clave del extra que le hemos metido el intent en el otro lado
-        String [] cadena = i.getStringArrayExtra("textoapasar");
 
         TextView textoNombre = findViewById(R.id.viewSetConfirmacionNombre);
-        textoNombre.setText(cadena[0]);
+        textoNombre.setText(i.getStringExtra("nombre"));
         TextView textoApellido = findViewById(R.id.viewSetConfirmacionApellidos);
-        textoApellido.setText(cadena[1]);
+        textoApellido.setText(i.getStringExtra("apellido"));
         TextView textoTelefono = findViewById(R.id.viewSetConfirmacionTelefono);
-        textoTelefono.setText(cadena[2]);
+        textoTelefono.setText(i.getStringExtra("telefono"));
         TextView textoEdad = findViewById(R.id.viewSetConfirmacionEdad);
-        textoEdad.setText(cadena[3]);
+        textoEdad.setText(i.getStringExtra("edad"));
     }
 
     public void pulsacionBtnAceptar(View v){
