@@ -58,10 +58,10 @@ public class FormularioActivity extends AppCompatActivity {
     private boolean comprobarVacios(EditText x){
         if(x.getText().toString().equals("")){
             x.requestFocus();
-            x.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.red)));
+            x.setBackgroundTintList(getColorStateList(R.color.red));
             return false;
         }else{
-            x.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.teal_700)));
+            x.setBackgroundTintList(getColorStateList(R.color.teal_700));
             return true;
         }
     }
