@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void pulsacionBtnNuevoEmpleado(View v){
-        Intent i = new Intent(this,FormularioActivity.class);
+    public void pulsacionBtnNuevoEmpleado(View v) {
+        Intent i = new Intent(this, FormularioActivity.class);
         startActivity(i);
     }
 
-    public void pulsacionBtnListadoEmpleado(View v){
+    public void pulsacionBtnListadoEmpleado(View v) {
 
     }
 }

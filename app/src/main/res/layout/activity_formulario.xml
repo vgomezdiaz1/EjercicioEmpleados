@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".FormularioActivity">
 
+    <Button
+        android:id="@+id/btnFormularioCargarEmpleado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="pulsacionBtnCargarContacto"
+        android:text="@string/btnCargarEmpleado"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.846" />
+
     <EditText
         android:id="@+id/editTextFormularioTelefono"
         android:layout_width="wrap_content"
@@ -102,7 +115,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/viewEdad"
-        android:inputType="number"
+        android:inputType="textWebEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
@@ -122,4 +135,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.724" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

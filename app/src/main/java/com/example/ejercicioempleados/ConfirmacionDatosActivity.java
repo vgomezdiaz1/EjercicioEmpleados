@@ -25,8 +25,8 @@ public class ConfirmacionDatosActivity extends AppCompatActivity {
         textoEdad.setText(i.getStringExtra("edad"));
     }
 
-    public void pulsacionBtnAceptar(View v){
-        Intent i = new Intent(this,MainActivity.class);
+    public void pulsacionBtnAceptar(View v) {
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 }
