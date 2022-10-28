@@ -107,17 +107,25 @@ public class FormularioActivity extends AppCompatActivity {
                         tApe.setText(family);
                     }
                     nameCur.close();
+
+                    //Con estas sentencias controlamos la cantidad de numeros que tiene el contacto
+                    //Guardando en hp el numero de numeros, para realizar las consultas que correspondan
+                    int i2 = c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER);
+                    int hp = Integer.parseInt(c.getString(i2));
                     //Con todo esto cogemos el telefono del contacto seleccionado
-                    String whereTelf = ContactsContract.CommonDataKinds.Phone.MIMETYPE + " = ? AND " + ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? ";
-                    String[] whereTelfParams = new String[] { ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE, id };
-                    Cursor telfCur = getContentResolver().query(ContactsContract.Data.CONTENT_URI, null, whereTelf, whereTelfParams, null);
-                    while (telfCur.moveToNext()) {
-                        int i = telfCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
-                        String given = telfCur.getString(i);
-                        EditText tTelf = findViewById(R.id.editTextFormularioTelefono);
-                        tTelf.setText(given);
+                    if(hp>0){
+                        String whereTelf = ContactsContract.CommonDataKinds.Phone.MIMETYPE + " = ? AND " + ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ? ";
+                        String[] whereTelfParams = new String[] { ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE, id };
+                        Cursor telfCur = getContentResolver().query(ContactsContract.Data.CONTENT_URI, null, whereTelf, whereTelfParams, null);
+                        while (telfCur.moveToNext()) {
+                            int i = telfCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+                            String given = telfCur.getString(i);
+                            EditText tTelf = findViewById(R.id.editTextFormularioTelefono);
+                            tTelf.setText(given);
+                        }
+                        telfCur.close();
                     }
-                    telfCur.close();
+
                     //Con todo esto cogemos el email del contacto seleccionado
                     String whereMail = ContactsContract.CommonDataKinds.Email.MIMETYPE + " = ? AND " + ContactsContract.CommonDataKinds.Email.CONTACT_ID + " = ? ";
                     String[] whereMailParams = new String[] { ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE , id };
@@ -128,7 +136,7 @@ public class FormularioActivity extends AppCompatActivity {
                         EditText tEd = findViewById(R.id.editTextEdad);
                         tEd.setText(given);
                     }
-                    telfCur.close();
+                    mailCur.close();
                     /*
                     int i2 = c.getColumnIndex(ContactsContract.Contacts.Data.DATA4);
                     EditText tTelf = findViewById(R.id.editTextFormularioTelefono);
@@ -136,6 +144,10 @@ public class FormularioActivity extends AppCompatActivity {
                     int i3 = c.getColumnIndex(ContactsContract.Contacts.Data.DATA4);
                     EditText tEd = findViewById(R.id.editTextEdad);
                     tEd.setText(c.getString(i3));*/
+
+
+
+
                 }
             } else {
                 Toast.makeText(this, "Todo ha ido bien pero ha clicado cancel", Toast.LENGTH_SHORT).show();

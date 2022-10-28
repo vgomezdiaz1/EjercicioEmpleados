@@ -11,4 +11,5 @@
     <string name="viewApellido">Apellido</string>
     <string name="viewTelefono">Telefono</string>
     <string name="viewEdad">E-mail</string>
+    <string name="db">my.db</string>
 </resources>
