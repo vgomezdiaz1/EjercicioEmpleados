@@ -15,6 +15,13 @@
         android:theme="@style/Theme.EjercicioEmpleados"
         tools:targetApi="31">
         <activity
+            android:name=".ListaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".NodoActivity"
             android:exported="false">
             <meta-data

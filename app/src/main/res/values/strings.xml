@@ -4,6 +4,7 @@
     <string name="btnMainNuevoEmpleado">Nuevo empleado</string>
     <string name="btnMainListarEmpleados">Listar empleados</string>
     <string name="btnSiguiente">Siguiente</string>
+    <string name="btnGuardar">Guardar</string>
     <string name="btnCargarEmpleado">Cargar contacto</string>
     <string name="btnOk">OK</string>
     <string name="btnCancel">Cancel</string>

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pulsacionBtnListadoEmpleado(View v) {
-
+        Intent i = new Intent(this, ListaActivity.class);
+        startActivity(i);
     }
 }
