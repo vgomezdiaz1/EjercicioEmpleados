@@ -6,29 +6,30 @@
 
     <TextView
         android:id="@+id/ViewNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
         android:layout_weight="1"
+        android:capitalize="characters"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/ViewApellidos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
         android:layout_weight="1"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/ViewTelefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
         android:layout_weight="1"
         android:text="TextView" />
 
     <TextView
         android:id="@+id/ViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
         android:layout_weight="1"
         android:text="TextView" />
 </LinearLayout>

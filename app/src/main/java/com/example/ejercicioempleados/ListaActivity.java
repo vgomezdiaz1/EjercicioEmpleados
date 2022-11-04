@@ -1,3 +1,4 @@
+package com.example.ejercicioempleados;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,13 +12,16 @@ import android.util.Log;
 import com.example.ejercicioempleados.MiAdaptador;
 import com.example.ejercicioempleados.R;
 
+import java.util.ArrayList;
+
 public class ListaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
-        /*
+        ArrayList <Empleado> lista = new ArrayList<>();
+
         //Iniciamos la bbdd en esta activity
         SQLiteDatabase myDB = openOrCreateDatabase(getResources().getString(R.string.db), MODE_PRIVATE, null);
         //Al hacer esta consulta me devuelve un cursor
@@ -31,20 +35,26 @@ public class ListaActivity extends AppCompatActivity {
             String telefono = cursor.getString(3);
             //Aqui lo imprimimos por LOGCAT
             Log.v("empleado", nombre + " " + apellidos + " " + telefono + " " + email);
-        }*/
+            //Añadimos todos los emplados a un arraylist
+            lista.add(new Empleado(nombre,apellidos,email,telefono));
+        }
         //Aqui es cuando empezamos a mostrarlas en pantalla
         //
         //Muy importante Hay que poner un reciclerView y poner match_parent en layout_width y layout_height
         //Creamos un Layout llamado elemento.xml y lo cambiamos a linear layout y añadimos tantos textView como hagan falta
         //
         //Esto es copiar y pegar para las listas
+
+
+        //String[] cadenas = new String[] {"PEPE","Luis","Maria","Victor"};
+
         RecyclerView rv = findViewById(R.id.lista_Empleados);
         rv.setHasFixedSize(true);
 
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
 
-        MiAdaptador adaptador = new MiAdaptador();
+        MiAdaptador adaptador = new MiAdaptador(lista);
         rv.setAdapter(adaptador);
 
 
