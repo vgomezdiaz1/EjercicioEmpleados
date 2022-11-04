@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase myDB = openOrCreateDatabase(getResources().getString(R.string.db), MODE_PRIVATE, null);
         myDB.execSQL(
                 "CREATE TABLE IF NOT EXISTS empleados " +
-                "(name VARCHAR(50), " +
+                "(id Integer PRIMARY KEY AUTOINCREMENT," +
+                        "name VARCHAR(50), " +
                 "apellido varchar(50), " +
                 "email varchar(100), " +
                 "telefono varchar(20))"

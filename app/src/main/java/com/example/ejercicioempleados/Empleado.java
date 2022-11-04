@@ -2,12 +2,14 @@ package com.example.ejercicioempleados;
 
 public class Empleado {
 
+    private int id;
     private String nombre;
     private String apellido;
     private String email;
     private String telefono;
 
-    public Empleado(String nombre, String apellido, String email, String telefono) {
+    public Empleado(int id,String nombre, String apellido, String email, String telefono) {
+        this.id =id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -16,6 +18,14 @@ public class Empleado {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setNombre(String nombre) {

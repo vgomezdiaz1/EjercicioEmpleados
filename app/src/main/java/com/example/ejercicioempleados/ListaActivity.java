@@ -29,14 +29,15 @@ public class ListaActivity extends AppCompatActivity {
         //mientras siga habiendo objetos en el cursor
         while(cursor.moveToNext()){
             //Ponemos lo que sea cada parte del objeto y lo guardamos
-            String nombre = cursor.getString(0);//Esta es la posicion dentro de la consulta
-            String apellidos = cursor.getString(1);
-            String email = cursor.getString(2);
-            String telefono = cursor.getString(3);
+            int id = cursor.getInt(0);
+            String nombre = cursor.getString(1);//Esta es la posicion dentro de la consulta
+            String apellidos = cursor.getString(2);
+            String email = cursor.getString(3);
+            String telefono = cursor.getString(4);
             //Aqui lo imprimimos por LOGCAT
-            Log.v("empleado", nombre + " " + apellidos + " " + telefono + " " + email);
+            Log.v("empleado", id + nombre + " " + apellidos + " " + telefono + " " + email);
             //Añadimos todos los emplados a un arraylist
-            lista.add(new Empleado(nombre,apellidos,email,telefono));
+            lista.add(new Empleado(id,nombre,apellidos,email,telefono));
         }
         //Aqui es cuando empezamos a mostrarlas en pantalla
         //
