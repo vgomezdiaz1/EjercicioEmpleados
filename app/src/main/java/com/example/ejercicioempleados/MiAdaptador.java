@@ -6,6 +6,7 @@ import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,15 +44,19 @@ public class MiAdaptador extends RecyclerView.Adapter<MiAdaptador.MyViewHolder> 
             txtTelefono = itemView.findViewById(R.id.ViewTelefono);
             txtLinea = itemView.findViewById(R.id.viewPasarLinea);
             //Programamos la pulsacion corta
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View view) {
-                    Toast.makeText(itemView.getContext(), "Clicado", Toast.LENGTH_SHORT).show();
-                    return false;
+                public void onClick(View view) {
+                    Intent i = new Intent(itemView.getContext(),FormularioActivity.class);
+                    i.putExtra("nombre",txtNombre.getText().toString());
+                    i.putExtra("apellido",txtApellido.getText().toString());
+                    i.putExtra("telefono",txtTelefono.getText().toString());
+                    i.putExtra("email",textEmail.getText().toString());
+                    i.putExtra("id",txtid.getText().toString());
+
+                    itemView.getContext().startActivity(i);
                 }
-
             });
-
 
             //Ahora vamos a programar que si mantenemos pulsado salga un menu
             itemView.setOnLongClickListener(new View.OnLongClickListener() {

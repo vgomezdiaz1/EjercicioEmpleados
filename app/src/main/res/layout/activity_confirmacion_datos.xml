@@ -104,6 +104,20 @@
         app:layout_constraintVertical_bias="0.171" />
 
     <TextView
+        android:id="@+id/viewSetConfirmacionID"
+        android:layout_width="199dp"
+        android:layout_height="19dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.073"
+        tools:visibility="invisible" />
+
+    <TextView
         android:id="@+id/viewSetConfirmacionApellidos"
         android:layout_width="199dp"
         android:layout_height="19dp"

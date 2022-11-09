@@ -20,6 +20,26 @@ public class FormularioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
+        Intent i = getIntent();
+        String nombre = i.getStringExtra("nombre");
+        EditText nombreET = findViewById(R.id.editTextNombre);
+        nombreET.setText(nombre);
+        String apellido = i.getStringExtra("apellido");
+        EditText apellidoET = findViewById(R.id.editTextApellidos);
+        apellidoET.setText(apellido);
+        String telefono = i.getStringExtra("telefono");
+        EditText telefonoET = findViewById(R.id.editTextFormularioTelefono);
+        telefonoET.setText(telefono);
+        String email = i.getStringExtra("email");
+        EditText emailET = findViewById(R.id.editTextEdad);
+        emailET.setText(email);
+
+        //cargamos el id de forma invisible, para que si en la pantalla de insertar, lo updatee
+        //y no cree uno nuevo, hemos creado una caja en la interfaz invisible para guardarlo
+        String id = i.getStringExtra("id");
+        EditText idET = findViewById(R.id.editTextid);
+        idET.setText(id);
     }
 
     public void pulsacionBtnAceptar(View v) {
@@ -28,10 +48,13 @@ public class FormularioActivity extends AppCompatActivity {
         String tApellido = "";
         String tTelefono = "";
         String tEdad = "";
+        String tIdentificador = "";
+
         EditText tNom = findViewById(R.id.editTextNombre);
         EditText tApe = findViewById(R.id.editTextApellidos);
         EditText tTelf = findViewById(R.id.editTextFormularioTelefono);
         EditText tEd = findViewById(R.id.editTextEdad);
+        EditText tid = findViewById(R.id.editTextid);
         if (comprobarVacios(tEd)) {
             tEdad = tEd.getText().toString();
             n++;
@@ -49,11 +72,14 @@ public class FormularioActivity extends AppCompatActivity {
             n++;
         }
         if (n == 4) {
+            //Si todos los campos estan llenos pasamos todos, incluido el id
+            tIdentificador = tid.getText().toString();
             Intent i = new Intent(this, ConfirmacionDatosActivity.class);
             i.putExtra("nombre", tNombre);
             i.putExtra("apellido", tApellido);
             i.putExtra("telefono", tTelefono);
             i.putExtra("edad", tEdad);
+            i.putExtra("id",tIdentificador);
             startActivity(i);
         } else {
             Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_SHORT).show();
